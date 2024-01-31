@@ -32,7 +32,7 @@ buttonYes.addEventListener("click", () => {
   buttonNo.style.display = "none";
   title.style.display = "none";
 
-  audio.loop = true;
+  // audio.loop = true;
   audio.play();
   audio.volume = 0.2;
 });
