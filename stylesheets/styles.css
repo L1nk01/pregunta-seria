@@ -1,0 +1,128 @@
+@import url('https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@700&family=Comic+Neue:ital,wght@1,700&display=swap');
+
+:root {
+  --width:250px;
+  --height:calc(var(--width) / 2);
+}
+
+
+* {
+  color: rgb(14, 122, 0);
+  font-family: 'Comic Neue', cursive;
+}
+
+h1 {
+  font-family: 'Cinzel Decorative', serif;
+  font-size: 4rem;
+}
+
+h3 {
+  font-size: 3rem;
+}
+
+body {
+  margin: 0;
+  background-image: url("../assets/background.gif");
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  img {
+    width: 300px;
+    height: auto;
+  }
+}
+
+#button-set {
+  display: flex;
+  flex-direction: row;
+  gap: 40px;
+}
+
+.button {
+    background-color: #ff2d7d;
+    border-radius: 8px;
+    border-style: none;
+    box-sizing: border-box;
+    color: #FFFFFF;
+    cursor: pointer;
+    display: inline-block;
+    font-family: "Haas Grot Text R Web", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-size: 18px;
+    font-weight: 500;
+    width: 120px;
+    height: 50px;
+    line-height: 0px;
+    list-style: none;
+    margin: 0;
+    outline: none;
+    padding: 10px 16px;
+    position: relative;
+    text-align: center;
+    text-decoration: none;
+    transition: color 100ms;
+    vertical-align: baseline;
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: manipulation;
+}
+
+.button:hover,
+.button:focus {
+    background-color: #F082AC;
+}
+
+.dvd {
+  width: var(--width);
+  height: var(--height);
+  background: url('../../assets/dvd.png');
+  background-size: contain;
+  background-repeat: no-repeat;
+  border: none;
+  position:absolute;
+
+  animation: toRight linear 6.8s infinite alternate, bounce linear 17s infinite alternate;
+}
+
+@keyframes bounce {
+  0% {
+    top:0;
+  }
+  48% {
+  }
+  50% {
+    top: calc(100% - var(--height));
+  }
+  52% {
+  }
+  100% {
+    top: 0;
+  }
+}
+
+@keyframes toRight {
+
+  0% {
+    left: 0;
+  }
+
+  100% {
+    left: calc(100% - var(--width));
+  }
+}
+
+@media (max-width: 768px) {
+  h1 {
+    font-size: 2.5rem;
+  }
+  
+  h3 {
+    font-size: 1.8rem;
+  }
+
+  #image {
+    width: 300px;
+  }
+}
