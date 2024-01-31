@@ -13,6 +13,7 @@ var counter = 0;
 var buttonFlag = false;
 
 buttonYes.addEventListener("click", () => {
+  image.setAttribute("src", "");
   image.setAttribute("src", "./assets/chipi_chapa.gif");
   text.innerHTML = "Espléndido.";
 

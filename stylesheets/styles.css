@@ -77,7 +77,7 @@ body {
 .dvd {
   width: var(--width);
   height: var(--height);
-  background: url('./assets/dvd.png');
+  background: url('../assets/dvd.png');
   background-size: contain;
   background-repeat: no-repeat;
   border: none;
