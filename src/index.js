@@ -5,13 +5,15 @@ const title = document.querySelector("#title");
 const text = document.querySelector("#text");
 const body = document.body;
 
+const audio = new Audio("../assets/chipi_chapa.mp3");
+
 var randomX = 0;
 var randomY = 0;
 var counter = 0;
 var buttonFlag = false;
 
 buttonYes.addEventListener("click", () => {
-  image.setAttribute("src", "../../assets/chipi_chapa.gif");
+  image.setAttribute("src", "../assets/chipi_chapa.gif");
   
   if (window.innerWidth < 768) {
     image.style.width = "400px";
@@ -25,6 +27,10 @@ buttonYes.addEventListener("click", () => {
   buttonYes.style.display = "none";
   buttonNo.style.display = "none";
   title.style.display = "none";
+
+  audio.loop = true;
+  audio.play();
+  audio.volume = 0.2;
 });
 
 buttonNo.addEventListener("click", () => {
@@ -40,7 +46,7 @@ buttonNo.addEventListener("click", () => {
   counter++;
 
   // Sets margin from display borders in px
-  const margin = 70;
+  const margin = 120;
 
   if (counter < 5) {
     randomX = Math.round(Math.random() * window.innerWidth) - margin;
@@ -50,10 +56,11 @@ buttonNo.addEventListener("click", () => {
     buttonNo.style.left = randomX + "px";
 
   } else {
-    image.setAttribute("src", "../../assets/cat_with_gun.gif")
+    image.setAttribute("src", "../assets/cat_with_gun.gif")
     text.innerHTML = '"No" nunca fue una opción 👹';
     buttonNo.setAttribute("class", "dvd");
     buttonNo.innerHTML = "";
+    buttonNo.disabled = true;
     // body.appendChild(buttonNo);
   }
 });
