@@ -12,6 +12,21 @@ var randomY = 0;
 var counter = 0;
 var buttonFlag = false;
 
+function stopAudio() {
+  if (!audio.paused) {
+    audio.pause();
+    audio.currentTime = 0;
+  }
+}
+
+window.addEventListener('beforeunload', function(event) {
+  stopAudio();
+});
+
+window.addEventListener('unload', function(event) {
+  stopAudio();
+});
+
 buttonYes.addEventListener("click", () => {
   image.setAttribute("src", "");
   image.setAttribute("src", "./assets/chipi_chapa.gif");
