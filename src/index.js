@@ -14,15 +14,18 @@ var buttonFlag = false;
 
 buttonYes.addEventListener("click", () => {
   image.setAttribute("src", "../assets/chipi_chapa.gif");
-  
-  if (window.innerWidth < 768) {
+  text.innerHTML = "Espléndido.";
+
+  if (window.innerWidth <= 768) {
     image.style.width = "400px";
+    text.style.fontSize = "2rem";
+  } else if (window.innerWidth >= 768 && window.innerWidth <= 1600) {
+    image.style.width = "550px";
+    text.style.fontSize = "3rem";
   } else {
     image.style.width = "700px";
+    text.style.fontSize = "4rem";
   }
-
-  text.innerHTML = "Espléndido.";
-  text.style.fontSize = "4rem";
 
   buttonYes.style.display = "none";
   buttonNo.style.display = "none";
@@ -35,8 +38,8 @@ buttonYes.addEventListener("click", () => {
 
 buttonNo.addEventListener("click", () => {
 
-  if (buttonFlag == false) {
-    buttonFlag == true;
+  if (buttonFlag === false) {
+    buttonFlag = true;
     body.appendChild(buttonNo);
     buttonNo.style.position = "absolute";
     buttonNo.style.top = "0px";
@@ -61,6 +64,5 @@ buttonNo.addEventListener("click", () => {
     buttonNo.setAttribute("class", "dvd");
     buttonNo.innerHTML = "";
     buttonNo.disabled = true;
-    // body.appendChild(buttonNo);
   }
 });
