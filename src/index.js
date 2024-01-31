@@ -5,7 +5,7 @@ const title = document.querySelector("#title");
 const text = document.querySelector("#text");
 const body = document.body;
 
-const audio = new Audio("../assets/chipi_chapa.mp3");
+const audio = new Audio("./assets/chipi_chapa.mp3");
 
 var randomX = 0;
 var randomY = 0;
@@ -13,7 +13,7 @@ var counter = 0;
 var buttonFlag = false;
 
 buttonYes.addEventListener("click", () => {
-  image.setAttribute("src", "../assets/chipi_chapa.gif");
+  image.setAttribute("src", "./assets/chipi_chapa.gif");
   text.innerHTML = "Espléndido.";
 
   if (window.innerWidth <= 768) {
@@ -48,18 +48,15 @@ buttonNo.addEventListener("click", () => {
 
   counter++;
 
-  // Sets margin from display borders in px
-  const margin = 120;
-
   if (counter < 5) {
-    randomX = Math.round(Math.random() * window.innerWidth) - margin;
-    randomY = Math.round(Math.random() * window.innerHeight) - margin;
+    randomX = Math.round(Math.random() * window.innerWidth);
+    randomY = Math.round(Math.random() * window.innerHeight);
   
     buttonNo.style.top = randomY + "px";
     buttonNo.style.left = randomX + "px";
 
   } else {
-    image.setAttribute("src", "../assets/cat_with_gun.gif")
+    image.setAttribute("src", "./assets/cat_with_gun.gif")
     text.innerHTML = '"No" nunca fue una opción 👹';
     buttonNo.setAttribute("class", "dvd");
     buttonNo.innerHTML = "";
